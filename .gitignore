@@ -1,0 +1,62 @@
+# ===================================================================
+#  Android / Gradle 项目 .gitignore
+#  基于 Android Studio 默认模板，补充了本项目的实际需求
+# ===================================================================
+
+# ---------- 本地配置（绝对不能提交）----------
+# local.properties 含本机 Android SDK 绝对路径，
+# 每台机器不同，提交会导致别人构建失败。
+local.properties
+
+# ---------- 构建产物 ----------
+# app/build 本机 111 MB，包含所有编译中间产物和 APK。
+# 注意：Android Studio 模板只在根 .gitignore 写 /build，
+# 那只能匹配根目录的 build/，module 下的 app/build 需要单独声明。
+/build
+/app/build
+
+# 其他模块的 build 目录
+/*/build
+
+# Gradle 缓存
+.gradle/
+
+# 构建输出
+captures/
+output.json
+
+# ---------- IDE 配置 ----------
+*.iml
+
+# .idea 下只忽略**个人**配置。
+# 注意：gradle.xml / misc.xml / compiler.xml / vcs.xml /
+# runConfigurations 等属于工程配置，需要提交给团队，
+# 不要加进来（加了会导致 Gradle 同步设置丢失）。
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/deploymentTargetSelector.xml
+
+# ---------- 原生代码构建 ----------
+.externalNativeBuild/
+.cxx/
+
+# ---------- 签名文件（含私钥，绝不能提交）----------
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# ---------- 操作系统 / 编辑器杂项 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# ---------- 日志 / 临时文件 ----------
+*.log
+*.hprof
